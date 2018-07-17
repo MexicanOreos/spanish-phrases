@@ -48,7 +48,9 @@ public class NumbersActivity extends AppCompatActivity {
 //        ListView listView = (ListView) findViewById(R.id.list);
 //        listView.setAdapter(arrayAdapter);
         GridView gridView = (GridView) findViewById(R.id.list);
+        int testVar = 0; //Delete this after
         gridView.setAdapter(arrayAdapter);
+        //Testing stuff for git
 
 
 
