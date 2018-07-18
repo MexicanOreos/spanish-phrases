@@ -21,20 +21,20 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> numbersList = new ArrayList<>();
+        ArrayList<Word> numbersList = new ArrayList<>();
 
-        LinkedHashMap<String, String> numbersMap = new LinkedHashMap<>();
+//        LinkedHashMap<String, String> numbersMap = new LinkedHashMap<>();
 
-        numbersList.add("One");
-        numbersList.add("Two");
-        numbersList.add("Three");
-        numbersList.add("Four");
-        numbersList.add("Five");
-        numbersList.add("Six");
-        numbersList.add("Seven");
-        numbersList.add("Eight");
-        numbersList.add("Nine");
-        numbersList.add("Ten");
+        numbersList.add(new Word("One", "Uno"));
+        numbersList.add(new Word("Two", "Dos"));
+        numbersList.add(new Word("Three", "Tres"));
+        numbersList.add(new Word("Four", "Cuatro"));
+        numbersList.add(new Word("Five", "Cinco"));
+        numbersList.add(new Word("Six", "Sies"));
+        numbersList.add(new Word("Seven", "Siete"));
+        numbersList.add(new Word("Eight", "Ocho"));
+        numbersList.add(new Word("Nine", "Nueve"));
+        numbersList.add(new Word("Ten", "Diez"));
 
 //        //We store the LinearLayout to be able to reference it and add child text views
 //        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
@@ -44,13 +44,9 @@ public class NumbersActivity extends AppCompatActivity {
 //            rootView.addView(wordView); // add it to layout
 //        }
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, numbersList);
-//        ListView listView = (ListView) findViewById(R.id.list);
-//        listView.setAdapter(arrayAdapter);
-        GridView gridView = (GridView) findViewById(R.id.list);
-        int testVar = 0; //Delete this after
-        gridView.setAdapter(arrayAdapter);
-        //Testing stuff for git
+        WordAdapter wordAdapter = new WordAdapter(this, numbersList);
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(wordAdapter);
 
 
 
